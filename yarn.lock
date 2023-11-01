@@ -3190,15 +3190,15 @@ __metadata:
   linkType: hard
 
 "@medusajs/event-bus-redis@npm:^1.8.9":
-  version: 1.8.9
-  resolution: "@medusajs/event-bus-redis@npm:1.8.9"
+  version: 1.8.10
+  resolution: "@medusajs/event-bus-redis@npm:1.8.10"
   dependencies:
-    "@medusajs/modules-sdk": ^1.8.8
+    "@medusajs/modules-sdk": ^1.12.2
     "@medusajs/utils": ^1.9.2
     awilix: ^8.0.0
     bullmq: ^3.5.6
     ioredis: ^5.2.5
-  checksum: 91952dca1a15ba0ae6e263b1520e3b14d234d0c8041d93e77abdae04c4db538b1a22d76f7060b9fcb661a7615c93129bdad2851d084db980356e0b1934a38e60
+  checksum: dfa0b626fc939c080570490fc6f7ed5ad3bc8ea6eab767532eb3459077338fec060247c17bc528121aa4492efead51d045b8714345094e01089441f310662af3
   languageName: node
   linkType: hard
 
@@ -3368,6 +3368,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@medusajs/modules-sdk@npm:^1.12.2":
+  version: 1.12.2
+  resolution: "@medusajs/modules-sdk@npm:1.12.2"
+  dependencies:
+    "@graphql-tools/merge": ^9.0.0
+    "@graphql-tools/schema": ^10.0.0
+    "@medusajs/orchestration": ^0.4.3
+    "@medusajs/types": ^1.11.5
+    "@medusajs/utils": ^1.10.4
+    awilix: ^8.0.0
+    knex: 2.4.2
+    pg: ^8.11.2
+    resolve-cwd: ^3.0.0
+  checksum: 7b736a97b31f89d0081d4fd2e89846edbfc62fdcd522ecf1b36de5fedc6d4185d0257c19bf39bed510236aaa247febd7c42dcc99b944897e7a4c4debe02cdd57
+  languageName: node
+  linkType: hard
+
 "@medusajs/modules-sdk@npm:^1.8.8":
   version: 1.11.3
   resolution: "@medusajs/modules-sdk@npm:1.11.3"
@@ -3395,10 +3412,29 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@medusajs/orchestration@npm:^0.4.3":
+  version: 0.4.3
+  resolution: "@medusajs/orchestration@npm:0.4.3"
+  dependencies:
+    "@medusajs/types": ^1.11.5
+    "@medusajs/utils": ^1.10.4
+    awilix: ^8.0.0
+    graphql: ^16.6.0
+  checksum: f31a318b4a2245fa512331840c5f3be72affbec251dbf3e1c073b556deb70305ff6d606233ccf3cc5320476cde33a99545403e8674cfc98750aa3b5a7b714488
+  languageName: node
+  linkType: hard
+
 "@medusajs/types@npm:^1.11.2, @medusajs/types@npm:^1.11.3":
   version: 1.11.3
   resolution: "@medusajs/types@npm:1.11.3"
   checksum: 05f8d5ff65dcb73a04f2de282404c84500aff3a098db40d006c233aee9548ce04cdccbb1fa7d218cc8e8ace8cbe90649911c6938666986f6f34e3bcb7aeb6c6b
+  languageName: node
+  linkType: hard
+
+"@medusajs/types@npm:^1.11.4, @medusajs/types@npm:^1.11.5":
+  version: 1.11.5
+  resolution: "@medusajs/types@npm:1.11.5"
+  checksum: b9bbcf1441d3f560ffc93fe9da1901f8a5502a9bfa4add7830f722da8e835bb8785d3951b202ae3439417360d05eb9897b5be06a1579d2c043a93911e2d1688e
   languageName: node
   linkType: hard
 
@@ -3465,6 +3501,21 @@ __metadata:
     knex: 2.4.2
     ulid: ^2.3.0
   checksum: 6ece84493056d71dc2374e4080c9ee89203f944a6c2ccae34e0a3c8fd8e1b0dea93dc846bfb76f082c4f34d8cf6c1cfd8aad744153f2a31500f4d6963a803a9a
+  languageName: node
+  linkType: hard
+
+"@medusajs/utils@npm:^1.10.4":
+  version: 1.10.4
+  resolution: "@medusajs/utils@npm:1.10.4"
+  dependencies:
+    "@medusajs/types": ^1.11.4
+    "@mikro-orm/core": 5.7.12
+    "@mikro-orm/migrations": 5.7.12
+    "@mikro-orm/postgresql": 5.7.12
+    awilix: ^8.0.1
+    knex: 2.4.2
+    ulid: ^2.3.0
+  checksum: 65d175e6ba687bd5379881beb321720b1f092ea2db6ccdafc7d45e9b0ab3d39bbadd7b58d2e71338016a6de69e3f1a452292bf309832e4cba39d81da60d1c6db
   languageName: node
   linkType: hard
 
@@ -17890,11 +17941,11 @@ __metadata:
 
 "typescript@patch:typescript@^4.5.2#~builtin<compat/typescript>":
   version: 4.9.5
-  resolution: "typescript@patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=23ec76"
+  resolution: "typescript@patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=289587"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: ab417a2f398380c90a6cf5a5f74badd17866adf57f1165617d6a551f059c3ba0a3e4da0d147b3ac5681db9ac76a303c5876394b13b3de75fdd5b1eaa06181c9d
+  checksum: 1f8f3b6aaea19f0f67cba79057674ba580438a7db55057eb89cc06950483c5d632115c14077f6663ea76fd09fce3c190e6414bb98582ec80aa5a4eaf345d5b68
   languageName: node
   linkType: hard
 
