@@ -6862,6 +6862,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tanstack/query-core@npm:5.8.1":
+  version: 5.8.1
+  resolution: "@tanstack/query-core@npm:5.8.1"
+  checksum: b2b4cc0e31eabb2b59297f9b90e3bb1eec9c23c156a9dad12f230e6ba12478bd34fcc9a37db9df3e74ef4241ea9feede807920963bdeaf5b6b72c3bf93576107
+  languageName: node
+  linkType: hard
+
 "@tanstack/react-query@npm:4.22.0":
   version: 4.22.0
   resolution: "@tanstack/react-query@npm:4.22.0"
@@ -6878,6 +6885,24 @@ __metadata:
     react-native:
       optional: true
   checksum: b146774b44a79dd5a6412d981ce04790e66da5a36f907a03c85c36f50a38fb4e4dfbfca7b1561c86b39fb0df1c0c1ae0a0ef2930c06b444da3f430b9bad450f1
+  languageName: node
+  linkType: hard
+
+"@tanstack/react-query@npm:5.8.1":
+  version: 5.8.1
+  resolution: "@tanstack/react-query@npm:5.8.1"
+  dependencies:
+    "@tanstack/query-core": 5.8.1
+  peerDependencies:
+    react: ^18.0.0
+    react-dom: ^18.0.0
+    react-native: "*"
+  peerDependenciesMeta:
+    react-dom:
+      optional: true
+    react-native:
+      optional: true
+  checksum: 0ab9591f05810baa454f61d8ca3c451ad1087a8d33e2268e6f91f75b1096d7d265110806d78361c512f327884f93dab9a54fcb7a0dd2b54afcf34c8e6dc60616
   languageName: node
   linkType: hard
 
@@ -13460,7 +13485,7 @@ __metadata:
     "@medusajs/file-local": ^1.0.2
     "@medusajs/medusa": ^1.17.1
     "@medusajs/medusa-cli": ^1.3.21
-    "@tanstack/react-query": 4.22.0
+    "@tanstack/react-query": 5.8.1
     "@types/express": ^4.17.13
     "@types/jest": ^27.4.0
     "@types/node": ^17.0.8
@@ -17890,11 +17915,11 @@ __metadata:
 
 "typescript@patch:typescript@^4.5.2#~builtin<compat/typescript>":
   version: 4.9.5
-  resolution: "typescript@patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=23ec76"
+  resolution: "typescript@patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=289587"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: ab417a2f398380c90a6cf5a5f74badd17866adf57f1165617d6a551f059c3ba0a3e4da0d147b3ac5681db9ac76a303c5876394b13b3de75fdd5b1eaa06181c9d
+  checksum: 1f8f3b6aaea19f0f67cba79057674ba580438a7db55057eb89cc06950483c5d632115c14077f6663ea76fd09fce3c190e6414bb98582ec80aa5a4eaf345d5b68
   languageName: node
   linkType: hard
 
