@@ -13414,8 +13414,8 @@ __metadata:
   linkType: hard
 
 "medusa-payment-stripe@npm:^6.0.5":
-  version: 6.0.5
-  resolution: "medusa-payment-stripe@npm:6.0.5"
+  version: 6.0.6
+  resolution: "medusa-payment-stripe@npm:6.0.6"
   dependencies:
     body-parser: ^1.19.0
     express: ^4.17.1
@@ -13423,11 +13423,14 @@ __metadata:
     stripe: ^11.10.0
   peerDependencies:
     "@medusajs/medusa": ^1.12.0
+    "@tanstack/react-table": ^8.7.9
     medusa-react: ^9.0.0
   peerDependenciesMeta:
+    "@tanstack/react-table":
+      optional: true
     medusa-react:
       optional: true
-  checksum: 4880f6761a3a1557b59eb4c43f350e3969bf8370d03b66840a77baec0765ba2c6cc61e724271e0c8d4c4df694a961fbf876a37006ccb2e7aa137b8450c275835
+  checksum: 69cc3346234a5dd7104d7a17cf5e87c38482f7e6cd0e1842a1963b3f75a986af7c6f587c304172e4b2bf1b931640b75dae72e187b892c042fb8fd42c0f052242
   languageName: node
   linkType: hard
 
@@ -17890,11 +17893,11 @@ __metadata:
 
 "typescript@patch:typescript@^4.5.2#~builtin<compat/typescript>":
   version: 4.9.5
-  resolution: "typescript@patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=23ec76"
+  resolution: "typescript@patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=289587"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: ab417a2f398380c90a6cf5a5f74badd17866adf57f1165617d6a551f059c3ba0a3e4da0d147b3ac5681db9ac76a303c5876394b13b3de75fdd5b1eaa06181c9d
+  checksum: 1f8f3b6aaea19f0f67cba79057674ba580438a7db55057eb89cc06950483c5d632115c14077f6663ea76fd09fce3c190e6414bb98582ec80aa5a4eaf345d5b68
   languageName: node
   linkType: hard
 
