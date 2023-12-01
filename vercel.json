@@ -2,7 +2,7 @@
   "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }],
   "headers": [
     {
-      "source": "http://localhost:3000/(.*)",
+      "source": "http://localhost:3000",
       "headers": [
         { "key": "Access-Control-Allow-Credentials", "value": "true" },
         { "key": "Access-Control-Allow-Origin", "value": "*" },
