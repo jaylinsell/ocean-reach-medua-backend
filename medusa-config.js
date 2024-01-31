@@ -58,6 +58,7 @@ const plugins = [
         cloud_name: "dkdcxhjuh",
         api_key: "545187698463949",
         api_secret: process.env.CLOUDINARY_SECRET,
+        root_folder: 'store',
         secure: true,
     },
 },
