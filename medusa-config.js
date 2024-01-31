@@ -56,7 +56,7 @@ const plugins = [
     resolve: `medusa-file-cloudinary`,
     options: {
         cloud_name: "dkdcxhjuh",
-        api_key: "979979198774316",
+        api_key: "545187698463949",
         api_secret: process.env.CLOUDINARY_SECRET,
         secure: true,
     },
