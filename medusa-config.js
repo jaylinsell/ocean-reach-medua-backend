@@ -52,6 +52,15 @@ const plugins = [
       },
     },
   },
+  {
+    resolve: `medusa-file-cloudinary`,
+    options: {
+        cloud_name: "dkdcxhjuh",
+        api_key: "979979198774316",
+        api_secret: "Lmgvd2Rh_HwKrGYkSwIrpHofib0",
+        secure: true,
+    },
+},
 ];
 
 const modules = {
