@@ -79,6 +79,22 @@ const plugins = [
       secure: true,
     },
   },
+  {
+    resolve: `medusa-plugin-sendgrid`,
+    options: {
+      api_key: process.env.SENDGRID_API_KEY,
+      from: process.env.SENDGRID_FROM,
+      order_placed_template: process.env.SENDGRID_ORDER_PLACED_ID,
+      // add other notification forms...
+    },
+  },
+  {
+    resolve: `medusa-plugin-mailchimp`,
+    options: {
+      api_key: process.env.MAILCHIMP_API_KEY,
+      newsletter_list_id: process.env.MAILCHIMP_NEWSLETTER_LIST_ID,
+    },
+  },
 ];
 
 const modules = {
