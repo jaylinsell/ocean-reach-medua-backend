@@ -85,7 +85,9 @@ const plugins = [
       api_key: process.env.SENDGRID_API_KEY,
       from: process.env.SENDGRID_FROM,
       order_placed_template: process.env.SENDGRID_ORDER_PLACED_ID,
-      // add other notification forms...
+      order_canceled_template: process.env.SENDGRID_ORDER_CANCELLED_ID,
+      order_shipped_template: process.env.SENDGRID_ORDER_SHIPPED_ID,
+      user_password_reset_template: process.env.SENDGRID_RESET_PASSWORD_ID
     },
   },
   {
