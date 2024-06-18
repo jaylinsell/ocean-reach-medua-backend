@@ -15,21 +15,31 @@ class orbShippingService extends AbstractFulfillmentService {
     data: Record<string, unknown>,
     cart: Cart
   ): Promise<number> {
+    console.log({optionData, data, cart})
     const freePostCodes = [3922, 3923, 3925]
     const isWithinFreeShippingZone = freePostCodes.includes(Number(cart.shipping_address.postal_code))
-
+    console.log({isWithinFreeShippingZone})
     if (isWithinFreeShippingZone) return 0
 
+    console.log('not free shipping, getting total weight...')
+    console.group('weights')
     const totalWeight = cart.items.reduce((acc, item) => {
-      return acc + (item.variant.weight * item.quantity);
+      console.log({weight: item.variant.weight, qty: item.quantity})
+      return acc + (Number(item.variant.weight) * Number(item.quantity));
     }, 0)
+    console.groupEnd()
 
-    if (totalWeight < 10) return 5
+    console.log({totalWeight})
 
-    const weightMultiplier = totalWeight / 10
-    const additionalWeight = weightMultiplier * 5
+    if (totalWeight < 10) return 500
+    console.log('is more than 10kg')
 
-    return 5 + additionalWeight
+    const weightMultiplier = totalWeight / 1000
+    const additionalWeight = weightMultiplier * 500
+
+    console.log({weightMultiplier, additionalWeight, total: 500 + additionalWeight})
+
+    return 500 + additionalWeight
   }
 
   // Not used methods, but required for the class to be valid
