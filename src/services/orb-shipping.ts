@@ -22,7 +22,7 @@ class orbShippingService extends AbstractFulfillmentService {
     if (isWithinFreeShippingZone) return 0
 
     const totalWeight = cart.items.reduce((acc, item) => {
-      return acc + (item.weight * item.quantity);
+      return acc + (item.variant.weight * item.quantity);
     }, 0)
 
     if (totalWeight < 10) return 5
