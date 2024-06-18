@@ -1,5 +1,4 @@
 import { AbstractFulfillmentService, Cart } from "@medusajs/medusa"
-import { CreateReturnType } from "@medusajs/medusa/dist/types/fulfillment-provider"
 
 
 class orbShippingService extends AbstractFulfillmentService {
@@ -34,12 +33,26 @@ class orbShippingService extends AbstractFulfillmentService {
   }
 
   // Not used methods, but required for the class to be valid
-  async getFulfillmentOptions(){
-    return []
+  async getFulfillmentOptions(): Promise<any[]> {
+    return [
+      {
+        id: "orb-shipping",
+      }
+    ]
   }
 
-  async validateFulfillmentData(){
-    return {}
+  async validateFulfillmentData(
+    optionData: Record<string, unknown>,
+    data: Record<string, unknown>,
+    cart: Cart
+  ): Promise<Record<string, unknown>> {
+    if (data.id !== "orb-shipping") {
+      throw new Error("invalid data")
+    }
+
+    return {
+      ...data,
+    }
   }
 
   async validateOption(
@@ -76,33 +89,5 @@ class orbShippingService extends AbstractFulfillmentService {
     return {}
   }
 }
-
-// async getFulfillmentOptions(): Promise<any[]> {
-//   return [
-//     {
-//       id: "orb-shipping",
-//     }
-//   ]
-// }
-
-// async validateFulfillmentData(
-//   optionData: Record<string, unknown>,
-//   data: Record<string, unknown>,
-//   cart: Cart
-// ): Promise<Record<string, unknown>> {
-//   if (data.id !== "orb-shipping") {
-//     throw new Error("invalid data")
-//   }
-
-//   return {
-//     ...data,
-//   }
-// }
-
-// async validateOption(
-//   data: Record<string, unknown>
-// ): Promise<boolean> {
-//   return data.id === "orb-shipping"
-// }
 
 export default orbShippingService
