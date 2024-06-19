@@ -15,28 +15,24 @@ class orbShippingService extends AbstractFulfillmentService {
   ): Promise<number> {
     const freePostCodes = ['3922', '3923', '3925']
     const isWithinFreeShippingZone = freePostCodes.includes(cart.shipping_address.postal_code)
-    console.log({isWithinFreeShippingZone})
+
     if (isWithinFreeShippingZone) return 0
 
-    console.log('not free shipping, getting total weight...')
-    console.group('weights')
     const totalWeight = cart.items.reduce((acc, item) => {
       console.log({weight: item.variant.weight, qty: item.quantity})
       return acc + (Number(item.variant.weight) * Number(item.quantity));
     }, 0)
-    console.groupEnd()
 
-    console.log({totalWeight})
+    // every time this interval amount is hit, we'll multiply against it. Ie, we want to add $5 every time this is 10 (10kg)
+    const weightIntervalAmount = 10
+    const basePrice = 500
 
-    if (totalWeight < 10) return 500
-    console.log('is more than 10kg')
+    if (totalWeight < weightIntervalAmount) return basePrice
 
-    const weightMultiplier = totalWeight / 1000
-    const additionalWeight = weightMultiplier * 500
+    const weightMultiplier = Math.floor(totalWeight / weightIntervalAmount)
+    const additionalWeight = weightMultiplier * basePrice
 
-    console.log({weightMultiplier, additionalWeight, total: 500 + additionalWeight})
-
-    return 500 + additionalWeight
+    return basePrice + additionalWeight
   }
 
   // Not used methods, but required for the class to be valid
@@ -53,6 +49,12 @@ class orbShippingService extends AbstractFulfillmentService {
     data: Record<string, unknown>,
     cart: Cart
   ): Promise<Record<string, unknown>> {
+    console.log('breaking here')
+    if (data.id !== "orb-shipping") {
+      console.log(data, data.id)
+      throw new Error("invalid data")
+    }
+
     return data
   }
 
