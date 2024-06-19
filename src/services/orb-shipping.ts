@@ -49,12 +49,6 @@ class orbShippingService extends AbstractFulfillmentService {
     data: Record<string, unknown>,
     cart: Cart
   ): Promise<Record<string, unknown>> {
-    console.log('breaking here')
-    if (data.id !== "orb-shipping") {
-      console.log(data, data.id)
-      throw new Error("invalid data")
-    }
-
     return data
   }
 
