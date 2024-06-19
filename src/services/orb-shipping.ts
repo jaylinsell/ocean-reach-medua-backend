@@ -4,10 +4,8 @@ import { AbstractFulfillmentService, Cart } from "@medusajs/medusa"
 class orbShippingService extends AbstractFulfillmentService {
   static identifier = "orb-shipping"
 
-  async canCalculate(
-    data: Record<string, unknown>
-  ): Promise<boolean> {
-    return data.id === "orb-shipping"
+  async canCalculate() {
+    return true
   }
 
   async calculatePrice(
@@ -15,9 +13,8 @@ class orbShippingService extends AbstractFulfillmentService {
     data: Record<string, unknown>,
     cart: Cart
   ): Promise<number> {
-    console.log({optionData, data, cart})
-    const freePostCodes = [3922, 3923, 3925]
-    const isWithinFreeShippingZone = freePostCodes.includes(Number(cart.shipping_address.postal_code))
+    const freePostCodes = ['3922', '3923', '3925']
+    const isWithinFreeShippingZone = freePostCodes.includes(cart.shipping_address.postal_code)
     console.log({isWithinFreeShippingZone})
     if (isWithinFreeShippingZone) return 0
 
@@ -60,43 +57,39 @@ class orbShippingService extends AbstractFulfillmentService {
       throw new Error("invalid data")
     }
 
-    return {
-      ...data,
-    }
+    return data
   }
 
-  async validateOption(
-    data: Record<string, unknown>
-  ): Promise<boolean> {
-    return data.id === "orb-shipping"
+  async validateOption() {
+    return true
   }
 
   async createFulfillment() {
-    return {}
+    return Promise.resolve({})
   }
 
   async cancelFulfillment() {
-    return {}
+    return Promise.resolve({})
   }
 
   async createReturn() {
-    return {}
+    return Promise.resolve({})
   }
 
   async getFulfillmentDocuments() {
-    return {}
+    return Promise.resolve({})
   }
 
   async getReturnDocuments() {
-    return {}
+    return Promise.resolve({})
   }
 
   async getShipmentDocuments() {
-    return {}
+    return Promise.resolve({})
   }
 
   async retrieveDocuments() {
-    return {}
+    return Promise.resolve([])
   }
 }
 
