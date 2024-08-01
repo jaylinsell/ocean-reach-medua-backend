@@ -19,7 +19,6 @@ class orbShippingService extends AbstractFulfillmentService {
     if (isWithinFreeShippingZone) return 0
 
     const totalWeight = cart.items.reduce((acc, item) => {
-      console.log({weight: item.variant.weight, qty: item.quantity})
       return acc + (Number(item.variant.weight) * Number(item.quantity));
     }, 0)
 
@@ -30,7 +29,7 @@ class orbShippingService extends AbstractFulfillmentService {
     if (totalWeight < weightIntervalAmount) return basePrice
 
     const weightMultiplier = Math.floor(totalWeight / weightIntervalAmount)
-    const additionalWeight = weightMultiplier * basePrice
+    const additionalWeight = weightMultiplier * (basePrice + 1)
 
     return basePrice + additionalWeight
   }
