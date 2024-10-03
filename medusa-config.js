@@ -97,6 +97,12 @@ const plugins = [
       newsletter_list_id: process.env.MAILCHIMP_NEWSLETTER_LIST_ID,
     },
   },
+  {
+    resolve: `@rsc-labs/medusa-store-analytics`,
+    options: {
+      enableUI: true
+    }
+  }
 ];
 
 const modules = {
