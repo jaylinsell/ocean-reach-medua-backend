@@ -34,31 +34,31 @@ const DATABASE_URL =
 const REDIS_URL = process.env.REDIS_URL || "redis://localhost:6379";
 
 const plugins = [
-  `medusa-fulfillment-manual`,
-  `medusa-payment-manual`,
-  {
-    resolve: `medusa-payment-stripe`,
-    options: {
-      api_key: process.env.STRIPE_API_KEY,
-      webhook_secret: process.env.STRIPE_WEBHOOK_SECRET,
-      payment_description: 'Ocean Reach Brewing',
-    },
-  },
-  {
-    resolve: `medusa-payment-paypal`,
-    options: {
-      sandbox: process.env.PAYPAL_SANDBOX,
-      clientId: process.env.PAYPAL_CLIENT_ID,
-      clientSecret: process.env.PAYPAL_CLIENT_SECRET,
-      authWebhookId: process.env.PAYPAL_AUTH_WEBHOOK_ID,
-    },
-  },
-  {
-    resolve: `@medusajs/file-local`,
-    options: {
-      upload_dir: "uploads",
-    },
-  },
+  // `medusa-fulfillment-manual`,
+  // `medusa-payment-manual`,
+  // {
+  //   resolve: `medusa-payment-stripe`,
+  //   options: {
+  //     api_key: process.env.STRIPE_API_KEY,
+  //     webhook_secret: process.env.STRIPE_WEBHOOK_SECRET,
+  //     payment_description: 'Ocean Reach Brewing',
+  //   },
+  // },
+  // {
+  //   resolve: `medusa-payment-paypal`,
+  //   options: {
+  //     sandbox: process.env.PAYPAL_SANDBOX,
+  //     clientId: process.env.PAYPAL_CLIENT_ID,
+  //     clientSecret: process.env.PAYPAL_CLIENT_SECRET,
+  //     authWebhookId: process.env.PAYPAL_AUTH_WEBHOOK_ID,
+  //   },
+  // },
+  // {
+  //   resolve: `@medusajs/file-local`,
+  //   options: {
+  //     upload_dir: "uploads",
+  //   },
+  // },
   {
     resolve: "@medusajs/admin",
     /** @type {import('@medusajs/admin').PluginOptions} */
@@ -69,55 +69,55 @@ const plugins = [
       },
     },
   },
-  {
-    resolve: `medusa-file-cloudinary`,
-    options: {
-      cloud_name: "dkdcxhjuh",
-      api_key: "545187698463949",
-      api_secret: process.env.CLOUDINARY_SECRET,
-      root_folder: "",
-      secure: true,
-    },
-  },
-  {
-    resolve: `medusa-plugin-sendgrid`,
-    options: {
-      api_key: process.env.SENDGRID_API_KEY,
-      from: process.env.SENDGRID_FROM,
-      order_placed_template: process.env.SENDGRID_ORDER_PLACED_ID,
-      order_canceled_template: process.env.SENDGRID_ORDER_CANCELLED_ID,
-      order_shipped_template: process.env.SENDGRID_ORDER_SHIPPED_ID,
-      user_password_reset_template: process.env.SENDGRID_RESET_PASSWORD_ID
-    },
-  },
-  {
-    resolve: `medusa-plugin-mailchimp`,
-    options: {
-      api_key: process.env.MAILCHIMP_API_KEY,
-      newsletter_list_id: process.env.MAILCHIMP_NEWSLETTER_LIST_ID,
-    },
-  },
-  {
-    resolve: `@rsc-labs/medusa-store-analytics`,
-    options: {
-      enableUI: true
-    }
-  }
+  // {
+  //   resolve: `medusa-file-cloudinary`,
+  //   options: {
+  //     cloud_name: "dkdcxhjuh",
+  //     api_key: "545187698463949",
+  //     api_secret: process.env.CLOUDINARY_SECRET,
+  //     root_folder: "",
+  //     secure: true,
+  //   },
+  // },
+  // {
+  //   resolve: `medusa-plugin-sendgrid`,
+  //   options: {
+  //     api_key: process.env.SENDGRID_API_KEY,
+  //     from: process.env.SENDGRID_FROM,
+  //     order_placed_template: process.env.SENDGRID_ORDER_PLACED_ID,
+  //     order_canceled_template: process.env.SENDGRID_ORDER_CANCELLED_ID,
+  //     order_shipped_template: process.env.SENDGRID_ORDER_SHIPPED_ID,
+  //     user_password_reset_template: process.env.SENDGRID_RESET_PASSWORD_ID
+  //   },
+  // },
+  // {
+  //   resolve: `medusa-plugin-mailchimp`,
+  //   options: {
+  //     api_key: process.env.MAILCHIMP_API_KEY,
+  //     newsletter_list_id: process.env.MAILCHIMP_NEWSLETTER_LIST_ID,
+  //   },
+  // },
+  // {
+  //   resolve: `@rsc-labs/medusa-store-analytics`,
+  //   options: {
+  //     enableUI: true
+  //   }
+  // }
 ];
 
 const modules = {
-  eventBus: {
-    resolve: "@medusajs/event-bus-redis",
-    options: {
-      redisUrl: REDIS_URL
-    }
-  },
-  cacheService: {
-    resolve: "@medusajs/cache-redis",
-    options: {
-      redisUrl: REDIS_URL
-    }
-  }
+  // eventBus: {
+  //   resolve: "@medusajs/event-bus-redis",
+  //   options: {
+  //     redisUrl: REDIS_URL
+  //   }
+  // },
+  // cacheService: {
+  //   resolve: "@medusajs/cache-redis",
+  //   options: {
+  //     redisUrl: REDIS_URL
+  //   }
+  // }
 };
 
 /** @type {import('@medusajs/medusa').ConfigModule["projectConfig"]} */
@@ -128,7 +128,7 @@ const projectConfig = {
   database_url: DATABASE_URL,
   admin_cors: ADMIN_CORS,
   // Uncomment the following lines to enable REDIS
-  redis_url: REDIS_URL
+  // redis_url: REDIS_URL
 };
 
 /** @type {import('@medusajs/medusa').ConfigModule} */
